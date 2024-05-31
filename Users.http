@@ -1,0 +1,21 @@
+
+### Successfully create a new User
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "email": "user1@example.com",
+  "password": "germany"
+}
+
+### Successfully create a new User
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+  "email": "use",
+  "password": "germany"
+}
+
+###
