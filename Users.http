@@ -1,0 +1,31 @@
+
+### Successfully create a new User
+POST http://localhost:8081/users/register
+Content-Type: application/json
+
+{
+  "username": "user11",
+  "email": "user1@example.com",
+  "password": "germany"
+}
+
+### Create new User Validation
+POST http://localhost:8081/users/register
+Content-Type: application/json
+
+{
+
+}
+
+
+### Create new User Validation
+POST http://localhost:8081/users/register
+Content-Type: application/json
+
+{
+  "username": "n",
+  "email": "g",
+  "password": "n"
+}
+
+###
