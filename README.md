@@ -21,3 +21,4 @@ This project is a multi-module Gradle setup for the BidBanker platform. It inclu
 
 ```sh
 ./gradlew build
+```

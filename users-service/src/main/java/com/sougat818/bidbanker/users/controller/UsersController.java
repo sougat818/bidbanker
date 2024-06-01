@@ -4,6 +4,8 @@ import com.sougat818.bidbanker.users.dto.CreateUserRequest;
 import com.sougat818.bidbanker.users.dto.CreateUserResponse;
 import com.sougat818.bidbanker.users.service.UsersService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -12,18 +14,17 @@ import reactor.core.publisher.Mono;
 @RestControllerAdvice
 @RequestMapping("/users")
 @Validated
+@RequiredArgsConstructor
 public class UsersController {
 
     private final UsersService usersService;
 
-    public UsersController(UsersService usersService) {
-        this.usersService = usersService;
-    }
-
     @PostMapping("/register")
-    public Mono<CreateUserResponse> registerUser(@RequestBody Mono<@Valid CreateUserRequest> user) {
-        return user.map(usersService::toEntity)
+    public Mono<ResponseEntity<CreateUserResponse>> registerUser(@RequestBody @Valid CreateUserRequest user) {
+        return Mono.just(user)
+                .map(usersService::toEntity)
                 .flatMap(usersService::registerUser)
-                .map(usersService::toResponse);
+                .map(usersService::toResponse)
+                .map(ResponseEntity::ok);
     }
 }

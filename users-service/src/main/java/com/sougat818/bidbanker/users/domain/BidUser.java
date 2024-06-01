@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class BidUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,9 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String email;
+    private String password;
 
     @Column(nullable = false)
-    private String password;
+    private String email;
 
 }
