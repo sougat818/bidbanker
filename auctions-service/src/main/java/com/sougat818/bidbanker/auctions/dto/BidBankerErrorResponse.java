@@ -1,4 +1,4 @@
-package com.sougat818.bidbanker.users.dto;
+package com.sougat818.bidbanker.auctions.dto;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

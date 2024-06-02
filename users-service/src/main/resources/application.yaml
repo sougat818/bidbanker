@@ -7,7 +7,7 @@ spring:
   liquibase:
     enabled: true
     url: jdbc:h2:mem:users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-#    url: jdbc:h2:file:///Users/sougatakhan/code/BidBanker/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    url: jdbc:h2:file:///Users/<user>/code/BidBanker/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     change-log: classpath:db/changelog/db.changelog-master.yaml
   h2:
     console:

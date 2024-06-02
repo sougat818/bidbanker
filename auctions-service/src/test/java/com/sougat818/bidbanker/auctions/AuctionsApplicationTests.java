@@ -1,4 +1,4 @@
-package com.sougat818.bidbanker.auction;
+package com.sougat818.bidbanker.auctions;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
