@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 @Service
 @RequiredArgsConstructor
@@ -67,7 +68,7 @@ public class AuctionService {
         auction.setMinimumBid(auctionRequest.minimumBid());
         auction.setSellerId(auctionRequest.sellerId());
         auction.setStatus(AuctionStatus.OPEN);
-        auction.setCreatedAt(OffsetDateTime.now());
+        auction.setCreatedAt(OffsetDateTime.now().withOffsetSameInstant(ZoneOffset.UTC));
         return auction;
     }
 
@@ -81,7 +82,7 @@ public class AuctionService {
         bid.setAuctionId(bidRequest.auctionId());
         bid.setAmount(bidRequest.amount());
         bid.setBuyerId(bidRequest.buyerId());
-        bid.setTimestamp(OffsetDateTime.now());
+        bid.setTimestamp(OffsetDateTime.now().withOffsetSameInstant(ZoneOffset.UTC));
         return bid;
     }
 

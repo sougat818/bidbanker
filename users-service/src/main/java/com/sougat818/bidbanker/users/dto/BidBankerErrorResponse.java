@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Map;
 
 @Getter
@@ -15,7 +16,7 @@ public class BidBankerErrorResponse {
     private final Map<String, String> errors;
 
     public BidBankerErrorResponse(HttpStatus status, String message) {
-        this.timestamp = OffsetDateTime.now();
+        this.timestamp = OffsetDateTime.now().withOffsetSameInstant(ZoneOffset.UTC);
         this.status = status.value();
         this.error = status.getReasonPhrase();
         this.message = message;
@@ -24,7 +25,7 @@ public class BidBankerErrorResponse {
     }
 
     public BidBankerErrorResponse(HttpStatus status, String message, Map<String, String> errors) {
-        this.timestamp = OffsetDateTime.now();
+        this.timestamp = OffsetDateTime.now().withOffsetSameInstant(ZoneOffset.UTC);
         this.status = status.value();
         this.error = status.getReasonPhrase();
         this.message = message;
