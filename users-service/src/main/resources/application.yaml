@@ -3,7 +3,7 @@ spring:
     name: users
   r2dbc:
     url: r2dbc:h2:mem:///users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-#    url: r2dbc:h2:file:////Users/<user>/code/BidBanker/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    url: r2dbc:h2:file:////Users/sougatakhan/code/BidBanker/users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
   liquibase:
     enabled: true
     url: jdbc:h2:mem:users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
