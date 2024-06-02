@@ -1,0 +1,64 @@
+
+### Successfully create a new Auction
+POST http://localhost:8082/auctions
+Content-Type: application/json
+
+{
+  "productName": "product1",
+  "minimumBid": 100,
+  "sellerId": 1
+}
+
+### Create new Auction Validation
+POST http://localhost:8082/auctions
+Content-Type: application/json
+
+{
+
+}
+
+
+### Create new Auction Validation
+POST http://localhost:8082/auctions
+Content-Type: application/json
+
+{
+  "productName": "",
+  "minimumBid": 0,
+  "sellerId": 1
+}
+
+### Successfully create a new Bid
+POST http://localhost:8082/auctions/bid
+Content-Type: application/json
+
+{
+  "auctionId": 1,
+  "amount": 101,
+  "buyerId": 2
+}
+
+### Successfully close an auction
+POST http://localhost:8082/auctions/1/close
+
+### new Bid Validation
+POST http://localhost:8082/auctions/bid
+Content-Type: application/json
+
+{
+
+}
+
+### new Bid Validation
+POST http://localhost:8082/auctions/bid
+Content-Type: application/json
+
+{
+  "auctionId": 1,
+  "amount": 0,
+  "buyerId": 2
+}
+
+
+### close auction validation
+POST http://localhost:8082/auctions/10000/close
