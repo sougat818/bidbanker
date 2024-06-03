@@ -1,0 +1,50 @@
+#Example Production config
+spring:
+  application:
+    name: auctions
+  r2dbc:
+    url: r2dbc:postgresql://mydbinstance.c6c8x1xkmzcc.eu-central-1.rds.amazonaws.com:5432/${spring.application.name}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  liquibase:
+    enabled: true
+    url: jdbc:postgresql://mydbinstance.c6c8x1xkmzcc.eu-central-1.rds.amazonaws.com:5432/${spring.application.name}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  h2:
+    console:
+      enabled: false
+  flyway:
+    enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://mydbinstance.c6c8x1xkmzcc.eu-central-1.rds.amazonaws.com:5432/${spring.application.name}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.jks
+    key-store-password: ${keystore.password}
+    key-password: ${key.password}
+
+cloud:
+  aws:
+    secretsmanager:
+      enabled: true
+      region: eu-central-1
+      secret-id: db-secret
+      prefix: /bidbanker/${spring.application.name}
+      properties:
+        - name: spring.datasource.username
+        - name: spring.datasource.password
+        - name: keystore.password
+        - name: key.password
