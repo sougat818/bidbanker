@@ -16,3 +16,45 @@ spring:
     enabled: false
 server:
   port: 8081
+
+jwt:
+  private-key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpQIBAAKCAQEAp50k7E9Ipi218MtJhk7ABHzYNqFpx9mpsye45ED9umWmTCYB
+    LZzcGfoZY93w593vw/h8afoeWuywIjHJd931pD549CnxsK+a9pzCp8/8XO1A5+Ft
+    wk1+ZejHTUYmQrt8aE4BiEyIJyZjwi+/4K7vUzZDz8MC662oHTpW7WuW7EeUP8mX
+    VG5w4Ual2PaMulApc6qfIB6mhg5XiDuQyIpWg8ezMX2dFhCHHZS6xUa2PPpmeGfL
+    vIWtFWbkkKjT+v2NFA2JIJNSCfYQmn4420p8XklRHJsJHRA0BpsoR6jxz8whF2Zc
+    ExSlSeeKHzY3cy+cFT3iMJc7KVjW459HboqhBwIDAQABAoIBAQCIA+94jAYKREHG
+    e1DY2oLboWvbOTUb5jfdmDhjkZHUdrRySszd9NJvihKchff+UI1G3Bgp77w+UJ/F
+    v90bllTFyaRhjsAAfyAjS6Zyg0bpKeZnxPlKmZQeor1IqcpWkMot4k9ACcra6j49
+    0H3GmG7BeeGhcUCne65WuYbc91frt/82Ju94nSvk6v+1M6u6LsSt7qTfK+KcKYLj
+    JX5baDtEv8RV+mZy9yqFQzCOSfO/Bxlhk7lSsG9Uv3a3+JLHrfqhlIiMFm2VwtSy
+    sTYYXwWieSwXpRHlJxjZ+wgKiyu47nsYDAZC+w3sVMTA3PP5Ao581W6staLHoL3D
+    or2rxRnBAoGBAOwPzwF7J4RBnaF08cwg9+QCRsfk/+1VdiYkBhS7+4VI5lMxg8jw
+    /UQOqGVajflFYD4ii7fIdNcmXvlZAtYPfW5/+vDrZZWlSG2xWg32X9indkB1eIA+
+    r5Sdhfp5nxUYB4Txn3d0x1RbJs6WVVUYNVvM+evlhQwrzNLsrBWDOvI3AoGBALXF
+    Vhq8nQnIzZacA5ez7t4DZrI5c2p8fG6s/84WtjzoJdlQoUjBAsDqBeeZv6aAf6Hg
+    hEDTBqZee4ks7U6zl0p4slIeLJ7nZV8bmTZy8WhQ5+Le/KwwsiMd2v3GtNAsRt4Q
+    Mlx+Lc+raoPD8YabcvrmsWhlQX6hkeGmrMsz75+xAoGAadNcdcmEGaJgzDTlASH2
+    f10V5h8fLIKXiNm1cC4lv8bCmqEj9z0yDQSVMXq7EvirAK/z+tv+pUUqZpYk01n2
+    XUc6dC7TR5blNWfAe2nr5fCM7rC66KMxi2pi2bsUOhyfolW/q4nKomKKrypt7sv/
+    f7wQflRSpPYtyJEZRDukfVkCgYEArqBLjVoggBLit8tghDB/zdh0o8ofwHCh1m3r
+    PyGAqFjaa8FTgSK0M4NgctS5UwtmEq0wQVq6q8BfbDS2MwLD2O7FWbDVaz+gmtNX
+    yQB6PZ5keAeDtST/Lk9zYJSyhr/SwWnMCCHMfxMOPFJVSd0zhCl2zHVii3ZLQP6w
+    SHO3xLECgYEAl36LUjdz24DkhHgJGeJ9UNWBII7ZESy9W3ARb65f4WOxFs5PeFjt
+    uyM2ZRPnZvPqwM9FkZWczXo+lyxICUp5sHvwPC4Tq3i9hXU+FhI54SxrtpWoG0ms
+    yEehOdtAbim/bw0P7tbn9w9eQ6kyIICRbXe7s89voKAIRATtMtquELc=
+    -----END RSA PRIVATE KEY-----
+  public-key:  |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp50k7E9Ipi218MtJhk7A
+    BHzYNqFpx9mpsye45ED9umWmTCYBLZzcGfoZY93w593vw/h8afoeWuywIjHJd931
+    pD549CnxsK+a9pzCp8/8XO1A5+Ftwk1+ZejHTUYmQrt8aE4BiEyIJyZjwi+/4K7v
+    UzZDz8MC662oHTpW7WuW7EeUP8mXVG5w4Ual2PaMulApc6qfIB6mhg5XiDuQyIpW
+    g8ezMX2dFhCHHZS6xUa2PPpmeGfLvIWtFWbkkKjT+v2NFA2JIJNSCfYQmn4420p8
+    XklRHJsJHRA0BpsoR6jxz8whF2ZcExSlSeeKHzY3cy+cFT3iMJc7KVjW459Hboqh
+    BwIDAQAB
+    -----END PUBLIC KEY-----
+  issuer: bidbanker
+  expiration: 3600000 # 1 hour in milliseconds
