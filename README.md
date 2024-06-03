@@ -5,6 +5,8 @@ This project is a multi-module Gradle setup for the BidBanker platform. It inclu
 - Users Service: Manages user registration and authentication.
 - Auctions Service: Manages auctions and bids.
 
+![](Bidbanker.gif)
+
 ## Project Structure
 
 - `common`: Shared utilities and configurations.
