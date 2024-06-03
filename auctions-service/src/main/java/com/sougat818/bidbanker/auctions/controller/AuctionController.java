@@ -10,6 +10,7 @@ import com.sougat818.bidbanker.auctions.service.AuctionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
@@ -21,7 +22,7 @@ public class AuctionController {
     private final AuctionService auctionService;
 
     @PostMapping
-    public Mono<ResponseEntity<CreateAuctionResponse>> createAuction(@Valid @RequestBody CreateAuctionRequest auctionRequest) {
+    public Mono<ResponseEntity<CreateAuctionResponse>> createAuction(@AuthenticationPrincipal @Valid @RequestBody CreateAuctionRequest auctionRequest) {
         Auction auction = auctionService.toEntity(auctionRequest);
         return auctionService.createAuction(auction)
                 .map(auctionService::toResponse)

@@ -4,9 +4,20 @@ POST http://localhost:8081/users/register
 Content-Type: application/json
 
 {
-  "username": "user11",
+  "username": "user1",
   "email": "user1@example.com",
   "password": "germany"
+}
+
+
+### User Login
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "germany"
+
 }
 
 ### Create new User Validation

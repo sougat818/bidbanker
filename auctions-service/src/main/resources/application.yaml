@@ -16,3 +16,17 @@ spring:
     enabled: false
 server:
   port: 8082
+
+jwt:
+  public-key:  |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp50k7E9Ipi218MtJhk7A
+    BHzYNqFpx9mpsye45ED9umWmTCYBLZzcGfoZY93w593vw/h8afoeWuywIjHJd931
+    pD549CnxsK+a9pzCp8/8XO1A5+Ftwk1+ZejHTUYmQrt8aE4BiEyIJyZjwi+/4K7v
+    UzZDz8MC662oHTpW7WuW7EeUP8mXVG5w4Ual2PaMulApc6qfIB6mhg5XiDuQyIpW
+    g8ezMX2dFhCHHZS6xUa2PPpmeGfLvIWtFWbkkKjT+v2NFA2JIJNSCfYQmn4420p8
+    XklRHJsJHRA0BpsoR6jxz8whF2ZcExSlSeeKHzY3cy+cFT3iMJc7KVjW459Hboqh
+    BwIDAQAB
+    -----END PUBLIC KEY-----
+  issuer: bidbanker
+  expiration: 3600000 # 1 hour in milliseconds

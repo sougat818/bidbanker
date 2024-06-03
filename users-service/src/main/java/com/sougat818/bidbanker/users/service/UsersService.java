@@ -1,10 +1,12 @@
 package com.sougat818.bidbanker.users.service;
 
 import com.sougat818.bidbanker.users.domain.BidUser;
+import com.sougat818.bidbanker.users.dto.AuthRequest;
 import com.sougat818.bidbanker.users.dto.CreateUserRequest;
 import com.sougat818.bidbanker.users.dto.CreateUserResponse;
 import com.sougat818.bidbanker.users.exceptions.ConflictException;
 import com.sougat818.bidbanker.users.repository.UsersRepository;
+import com.sougat818.bidbanker.users.util.JwtUtil;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +21,7 @@ import reactor.core.publisher.Mono;
 public class UsersService {
 
     private final UsersRepository usersRepository;
+    private final JwtUtil jwtUtil;
 
     @Transactional
     public Mono<BidUser> registerUser(@NonNull BidUser bidUser) {
@@ -31,6 +34,15 @@ public class UsersService {
 
     }
 
+    public Mono<BidUser> authenticate(AuthRequest authRequest) {
+        return usersRepository.findByUsername(authRequest.username())
+                .filter(user -> user.getPassword().equals(authRequest.password()))
+                .switchIfEmpty(Mono.error(new RuntimeException("Invalid credentials")));
+    }
+
+    public Mono<String> generateToken(String username) {
+        return Mono.just(jwtUtil.generateToken(username));
+    }
 
     public BidUser toEntity(CreateUserRequest request) {
         return new BidUser(null, request.username(), request.password(), request.email());
