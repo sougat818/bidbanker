@@ -95,7 +95,7 @@ The code should have appropriate levels of testing to ensure that the stated req
 
 ## TODO
 
-- Implement user authentication. [feature/jwt-asymmetric-authentication](https://github.com/sougat818/bidbanker/compare/feature/jwt-asymmetric-authentication...main)
+- Finish Implementation of user authentication. [feature/jwt-asymmetric-authentication](https://github.com/sougat818/bidbanker/pull/3)
 - Add more comprehensive API documentation.
 - Add static code analysis (Checkstyle, PMD, SpotBugs).
 - Set up and configure code coverage reporting.
